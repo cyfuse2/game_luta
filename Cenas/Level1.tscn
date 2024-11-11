@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy2glglxcwvgh"]
+
+[ext_resource type="PackedScene" uid="uid://cxo4a44byxwhk" path="res://Cenas/Player.tscn" id="1_qivvl"]
+[ext_resource type="Texture2D" uid="uid://dhht6e6el86qb" path="res://Images/StarWars.png" id="2_l04va"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk621"]
+size = Vector2(1152.75, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj7xl"]
+size = Vector2(83.875, 295.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfmi3"]
+size = Vector2(52, 267)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(575.625, 622)
+shape = SubResource("RectangleShape2D_uk621")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 321)
+shape = SubResource("RectangleShape2D_uk621")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(105, 480.938)
+shape = SubResource("RectangleShape2D_mj7xl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(635, 473.5)
+shape = SubResource("RectangleShape2D_jfmi3")
+
+[node name="Player" parent="." instance=ExtResource("1_qivvl")]
+position = Vector2(203, 558)
+jump_velocity = -2000
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(378, 473)
+zoom = Vector2(2.5, 2.5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 126.0
+offset_top = 332.0
+offset_right = 1432.0
+offset_bottom = 1065.0
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("2_l04va")
