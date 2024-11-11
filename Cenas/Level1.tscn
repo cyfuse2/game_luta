@@ -1,39 +1,41 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy2glglxcwvgh"]
 
-[ext_resource type="PackedScene" uid="uid://cxo4a44byxwhk" path="res://Cenas/Player.tscn" id="1_qivvl"]
-[ext_resource type="Texture2D" uid="uid://dhht6e6el86qb" path="res://Images/StarWars.png" id="2_l04va"]
+[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Cenas/Player.tscn" id="1_qivvl"]
+[ext_resource type="Texture2D" uid="uid://qdhko12c10au" path="res://Images/Captura de tela 2024-11-04 091812.png" id="2_l04va"]
+[ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Cenas/player_2.tscn" id="2_v5yab"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk621"]
-size = Vector2(1152.75, 53)
+size = Vector2(642.375, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mj7xl"]
-size = Vector2(83.875, 295.875)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfmi3"]
-size = Vector2(52, 267)
+size = Vector2(83.75, 297.438)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(575.625, 622)
+position = Vector2(380, 624)
 shape = SubResource("RectangleShape2D_uk621")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(576, 321)
+position = Vector2(381, 317)
 shape = SubResource("RectangleShape2D_uk621")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(103, 481)
+position = Vector2(109, 481)
 shape = SubResource("RectangleShape2D_mj7xl")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(635, 473.5)
-shape = SubResource("RectangleShape2D_jfmi3")
+position = Vector2(647, 474)
+shape = SubResource("RectangleShape2D_mj7xl")
 
 [node name="Player" parent="." instance=ExtResource("1_qivvl")]
 position = Vector2(203, 558)
+jump_velocity = -2000
+
+[node name="Player2" parent="." instance=ExtResource("2_v5yab")]
+position = Vector2(530, 559)
 jump_velocity = -2000
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -45,9 +47,9 @@ zoom = Vector2(2.5, 2.5)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 126.0
-offset_top = 332.0
-offset_right = 1432.0
-offset_bottom = 1065.0
+offset_left = 128.0
+offset_top = 334.0
+offset_right = 1434.0
+offset_bottom = 1067.0
 scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_l04va")
