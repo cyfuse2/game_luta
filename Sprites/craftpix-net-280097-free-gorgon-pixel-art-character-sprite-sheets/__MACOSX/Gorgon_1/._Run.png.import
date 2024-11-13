@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci2x0n4x1cdv6"
-path="res://.godot/imported/Walk.png-95484994347ef2330ec8681301b93d94.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://wkplmlbrl1ol"
+valid=false
 
 [deps]
 
-source_file="res://Sprites/craftpix-net-786081-free-werewolf-sprite-sheets-pixel-art/White_Werewolf/Walk.png"
-dest_files=["res://.godot/imported/Walk.png-95484994347ef2330ec8681301b93d94.ctex"]
+source_file="res://Sprites/craftpix-net-280097-free-gorgon-pixel-art-character-sprite-sheets/__MACOSX/Gorgon_1/._Run.png"
 
 [params]
 

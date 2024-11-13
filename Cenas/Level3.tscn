@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://h64h64b0cqq3"]
 
 [ext_resource type="Texture2D" uid="uid://ccccrlp2xbr0n" path="res://Images/Battleground2.png" id="1_py2i6"]
-[ext_resource type="PackedScene" uid="uid://cxo4a44byxwhk" path="res://Cenas/Player.tscn" id="2_6qvjs"]
+[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Cenas/Player.tscn" id="2_6qvjs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b1ab"]
 size = Vector2(49, 667)

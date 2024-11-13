@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dfcfjjwt577rg"]
+[gd_scene load_steps=65 format=3 uid="uid://dfcfjjwt577rg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_sqdoo"]
 [ext_resource type="Texture2D" uid="uid://xewnoyxyg222" path="res://Sprites/Karasu_tengu/Attack_1.png" id="2_e4a0g"]
@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://buf571gehk46k" path="res://Sprites/Karasu_tengu/Jump.png" id="4_sw2ra"]
 [ext_resource type="Texture2D" uid="uid://cofthdo6ryn13" path="res://Sprites/Karasu_tengu/Attack_3.png" id="4_uekbb"]
 [ext_resource type="Texture2D" uid="uid://d1be5pbbuqvhw" path="res://Sprites/Karasu_tengu/Run.png" id="5_ykvrm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv6t1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2rb4"]
+bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhxtw"]
 atlas = ExtResource("2_e4a0g")
@@ -391,24 +397,39 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t45pr"]
-radius = 12.0
-height = 80.0
+radius = 18.0
+height = 86.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbb0t"]
-radius = 12.0
-height = 92.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41j1n"]
+radius = 0.996973
+height = 4.12291
 
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_dx4s7"]
-length = 4.92542
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g8snh"]
+radius = 0.808466
+height = 4.47962
 
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_h0cea"]
-length = 3.51704
-
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_5o7p4"]
-length = 8.10381
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m8pcr"]
+radius = 2.1515
+height = 7.54892
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_sqdoo")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+offset_left = -23.0
+offset_top = -97.0
+offset_right = 392.0
+offset_bottom = -82.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kv6t1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f2rb4")
+step = 1.0
+value = 80.0
+show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -416,13 +437,15 @@ script = ExtResource("1_sqdoo")
 texture_filter = 1
 position = Vector2(3, -34)
 sprite_frames = SubResource("SpriteFrames_ntmdx")
-animation = &"attack1"
+animation = &"idle"
 autoplay = "idle"
+metadata/_edit_group_ = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-3, -10)
+position = Vector2(-2, -13)
 shape = SubResource("CapsuleShape2D_t45pr")
+metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Timer_Attack" type="Timer" parent="."]
@@ -439,32 +462,32 @@ target_position = Vector2(-6, 20)
 target_position = Vector2(7, 20)
 
 [node name="HitBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 visible = false
-position = Vector2(9, -16)
-shape = SubResource("CapsuleShape2D_hbb0t")
+
+[node name="Hit1" type="CollisionShape2D" parent="HitBox"]
+visible = false
+position = Vector2(45, -18)
+rotation = -1.82561
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_41j1n")
+
+[node name="Hit2" type="CollisionShape2D" parent="HitBox"]
+visible = false
+position = Vector2(42, -22)
+rotation = -1.28805
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_g8snh")
+
+[node name="Hit3" type="CollisionShape2D" parent="HitBox"]
+visible = false
+position = Vector2(42, -17)
+rotation = -1.74533
+scale = Vector2(7.02737, 5.7401)
+shape = SubResource("CapsuleShape2D_m8pcr")
 
 [node name="Delay_Attack" type="Timer" parent="."]
 one_shot = true
 
-[node name="Hit1" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(18, -14)
-rotation = -1.79594
-scale = Vector2(10, 10)
-shape = SubResource("SeparationRayShape2D_dx4s7")
-
-[node name="Hit2" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(30, -26)
-rotation = -1.31772
-scale = Vector2(10, 10)
-shape = SubResource("SeparationRayShape2D_h0cea")
-
-[node name="Hit3" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(19, -16)
-rotation = -1.74533
-scale = Vector2(7.02737, 5.7401)
-shape = SubResource("SeparationRayShape2D_5o7p4")
+[connection signal="timeout" from="Timer_Attack" to="." method="_on_timer_attack_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="timeout" from="Delay_Attack" to="." method="_on_delay_attack_timeout"]

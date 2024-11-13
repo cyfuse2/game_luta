@@ -1,10 +1,11 @@
 extends CharacterBody2D 
 
-@export var speed = 160
-@export var jump_velocity = -300 
+@export var speed = 130
+@export var jump_velocity = -500 
 
 var dir 
-var gravity = 4000
+var gravity = 6000
+var jumps = 1
 
 @onready var animator = $AnimSprite 
 

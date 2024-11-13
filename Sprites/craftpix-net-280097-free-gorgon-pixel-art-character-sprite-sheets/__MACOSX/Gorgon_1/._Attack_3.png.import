@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://05felw1iwipo"
-path="res://.godot/imported/Jump.png-11296816e8886d8afbb54f0db761a68d.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://b4l3t8vklbn1s"
+valid=false
 
 [deps]
 
-source_file="res://Sprites/craftpix-net-786081-free-werewolf-sprite-sheets-pixel-art/White_Werewolf/Jump.png"
-dest_files=["res://.godot/imported/Jump.png-11296816e8886d8afbb54f0db761a68d.ctex"]
+source_file="res://Sprites/craftpix-net-280097-free-gorgon-pixel-art-character-sprite-sheets/__MACOSX/Gorgon_1/._Attack_3.png"
 
 [params]
 

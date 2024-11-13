@@ -1,14 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy2glglxcwvgh"]
+[gd_scene load_steps=10 format=3 uid="uid://dy2glglxcwvgh"]
 
 [ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Cenas/Player.tscn" id="1_qivvl"]
-[ext_resource type="Texture2D" uid="uid://qdhko12c10au" path="res://Images/Captura de tela 2024-11-04 091812.png" id="2_l04va"]
 [ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Cenas/player_2.tscn" id="2_v5yab"]
+[ext_resource type="Texture2D" uid="uid://dhht6e6el86qb" path="res://Images/StarWars.png" id="3_mtwtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk621"]
 size = Vector2(642.375, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mj7xl"]
 size = Vector2(83.75, 297.438)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08bpd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4w44"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq5xi"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0xd0"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,16 +43,41 @@ position = Vector2(647, 474)
 shape = SubResource("RectangleShape2D_mj7xl")
 
 [node name="Player" parent="." instance=ExtResource("1_qivvl")]
-position = Vector2(203, 558)
+position = Vector2(208, 560)
 jump_velocity = -2000
 
 [node name="Player2" parent="." instance=ExtResource("2_v5yab")]
-position = Vector2(530, 559)
+position = Vector2(536, 560)
 jump_velocity = -2000
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(378, 473)
 zoom = Vector2(2.5, 2.5)
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D"]
+offset_left = 54.0
+offset_top = -121.0
+offset_right = 219.0
+offset_bottom = -114.0
+theme_override_styles/background = SubResource("StyleBoxFlat_08bpd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x4w44")
+step = 1.0
+value = 80.0
+fill_mode = 1
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="Camera2D"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+offset_left = -218.0
+offset_top = -121.0
+offset_right = -53.0
+offset_bottom = -114.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dq5xi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w0xd0")
+step = 1.0
+value = 80.0
+show_percentage = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -52,4 +89,4 @@ offset_top = 334.0
 offset_right = 1434.0
 offset_bottom = 1067.0
 scale = Vector2(0.385, 0.385)
-texture = ExtResource("2_l04va")
+texture = ExtResource("3_mtwtq")

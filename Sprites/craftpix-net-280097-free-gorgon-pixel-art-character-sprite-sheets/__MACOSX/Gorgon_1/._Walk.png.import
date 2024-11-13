@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbk0b15l1qsui"
-path="res://.godot/imported/Run+Attack.png-41790f177a4a4a1b73f7d4e8cfbd2df7.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://blgveqw6x5e7t"
+valid=false
 
 [deps]
 
-source_file="res://Sprites/craftpix-net-786081-free-werewolf-sprite-sheets-pixel-art/White_Werewolf/Run+Attack.png"
-dest_files=["res://.godot/imported/Run+Attack.png-41790f177a4a4a1b73f7d4e8cfbd2df7.ctex"]
+source_file="res://Sprites/craftpix-net-280097-free-gorgon-pixel-art-character-sprite-sheets/__MACOSX/Gorgon_1/._Walk.png"
 
 [params]
 
