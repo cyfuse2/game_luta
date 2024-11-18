@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dy2glglxcwvgh"]
 
-[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Cenas/Player.tscn" id="1_qivvl"]
-[ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Cenas/player_2.tscn" id="2_v5yab"]
+[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Prefabs/Player.tscn" id="1_qivvl"]
+[ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Prefabs/player_2.tscn" id="2_v5yab"]
 [ext_resource type="Texture2D" uid="uid://dhht6e6el86qb" path="res://Images/StarWars.png" id="3_mtwtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk621"]
@@ -44,11 +44,9 @@ shape = SubResource("RectangleShape2D_mj7xl")
 
 [node name="Player" parent="." instance=ExtResource("1_qivvl")]
 position = Vector2(208, 560)
-jump_velocity = -2000
 
 [node name="Player2" parent="." instance=ExtResource("2_v5yab")]
 position = Vector2(536, 560)
-jump_velocity = -2000
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(378, 473)
