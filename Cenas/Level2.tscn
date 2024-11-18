@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cq0x067nhh0iw"]
 
 [ext_resource type="Texture2D" uid="uid://bn3gieyk3j0a" path="res://Images/apocalypse3.png" id="1_iku12"]
-[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Cenas/Player.tscn" id="2_2hj24"]
-[ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Cenas/player_2.tscn" id="3_8li06"]
+[ext_resource type="PackedScene" uid="uid://dfcfjjwt577rg" path="res://Prefabs/Player.tscn" id="2_2hj24"]
+[ext_resource type="PackedScene" uid="uid://jlnqnex0r78l" path="res://Prefabs/player_2.tscn" id="3_8li06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u7kj"]
 size = Vector2(65, 667)
